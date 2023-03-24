@@ -1,0 +1,26 @@
+{
+    "name": "next-payload",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "concurrently -k -n \"WEB,ADMIN\" -c \"blue,magenta\" \"npm run dev:web\" \"npm run dev:admin\"",
+        "dev:web": "wait-on tcp:3001 && npm run dev --prefix web",
+        "dev:admin": "npm run dev --prefix admin",
+        "build": "npm run build --prefix web && npm run build --prefix admin",
+        "start": "concurrently -k -n \"WEB,ADMIN\" -c \"blue,magenta\" \"npm run start:web\" \"npm run start:admin\"",
+        "start:web": "wait-on tcp:3001 && npm run start --prefix web",
+        "start:admin": "npm run serve --prefix admin"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "concurrently": "^7.6.0",
+        "wait-on": "^7.0.1"
+    },
+    "volta": {
+        "node": "18.15.0",
+        "npm": "9.6.2"
+    }
+}
