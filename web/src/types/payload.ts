@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const mediaSchema = z.object({
+export const mediaSchema = z.object({
     id: z.string(),
     alt: z.string().optional(),
     url: z.string().optional(),
@@ -16,7 +16,7 @@ const mediaSchema = z.object({
 export const heroSchema = z.object({
     title: z.string(),
     text: z.string(),
-    image: z.string().or(mediaSchema),
+    image: mediaSchema,
     id: z.string().optional(),
     blockName: z.string().optional(),
     blockType: z.literal('hero'),

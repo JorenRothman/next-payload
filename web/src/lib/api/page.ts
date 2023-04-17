@@ -18,12 +18,12 @@ export const getAllPages = async () => {
 
 export const getPageBySlug = async (slug: string) => {
     const response = await api('/pages', {
+        depth: 100,
         where: {
             slug: {
                 equals: slug,
             },
         },
-        depth: 1,
     });
 
     const schema = apiResponseSchema(PageSchema);

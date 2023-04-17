@@ -13,6 +13,9 @@ const Media: CollectionConfig = {
             type: 'text',
         },
     ],
+    access: {
+        read: () => true,
+    },
 };
 
 export default Media;

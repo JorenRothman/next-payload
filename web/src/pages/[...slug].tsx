@@ -10,9 +10,11 @@ export default function Page(
     return <Resolver blocks={props.page.blocks} />;
 }
 
-const paramsSchema = z.object({
-    slug: z.string(),
-});
+const paramsSchema = z
+    .object({
+        slug: z.array(z.string()),
+    })
+    .optional();
 
 interface Request {
     params: unknown;
@@ -22,7 +24,11 @@ export const getStaticProps = async ({ params }: Request) => {
     try {
         const safeParams = paramsSchema.parse(params);
 
-        const response = await getPageBySlug(safeParams.slug);
+        const slug = safeParams?.slug
+            ? (safeParams.slug as string[]).join('/')
+            : 'home';
+
+        const response = await getPageBySlug(slug);
 
         const page = response.docs[0];
 
@@ -33,6 +39,7 @@ export const getStaticProps = async ({ params }: Request) => {
             revalidate: 1,
         };
     } catch (error) {
+        console.log(error);
         return { notFound: true };
     }
 };

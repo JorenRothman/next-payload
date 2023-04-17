@@ -1,33 +1,33 @@
 {
-  "name": "web",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@types/node": "18.15.5",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.11",
-    "eslint": "8.36.0",
-    "eslint-config-next": "13.2.4",
-    "fetch-absolute": "^1.0.0",
-    "next": "13.2.4",
-    "qs": "^6.11.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.0.2",
-    "winston": "^3.8.2",
-    "zod": "^3.21.4"
-  },
-  "devDependencies": {
-    "@total-typescript/ts-reset": "^0.4.2",
-    "@types/qs": "^6.9.7",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7"
-  }
+    "name": "web",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "NODE_OPTIONS=\"--inspect\" next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@types/node": "18.15.5",
+        "@types/react": "18.0.28",
+        "@types/react-dom": "18.0.11",
+        "eslint": "8.36.0",
+        "eslint-config-next": "13.2.4",
+        "fetch-absolute": "^1.0.0",
+        "next": "13.2.4",
+        "qs": "^6.11.1",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "typescript": "5.0.2",
+        "winston": "^3.8.2",
+        "zod": "^3.21.4"
+    },
+    "devDependencies": {
+        "@total-typescript/ts-reset": "^0.4.2",
+        "@types/qs": "^6.9.7",
+        "autoprefixer": "^10.4.14",
+        "postcss": "^8.4.21",
+        "tailwindcss": "^3.2.7"
+    }
 }

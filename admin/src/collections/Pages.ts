@@ -17,6 +17,7 @@ const Hero: Block = {
             name: 'image',
             type: 'upload',
             relationTo: 'media',
+            maxDepth: 2,
             required: true,
         },
     ],
